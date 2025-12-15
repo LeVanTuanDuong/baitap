@@ -35,7 +35,6 @@ class _LoginMenuState extends State<LoginMenu> {
   }
 
   Future<void> _handleLogin() async {
-    // Reset lỗi
     setState(() {
       _usernameError = false;
       _passwordError = false;
@@ -44,7 +43,6 @@ class _LoginMenuState extends State<LoginMenu> {
     final username = _usernameController.text.trim();
     final password = _passwordController.text.trim();
 
-    // Validate input
     bool valid = true;
     if (username.isEmpty) {
       setState(() {
@@ -66,7 +64,6 @@ class _LoginMenuState extends State<LoginMenu> {
     });
 
     try {
-      // Gọi API Login
       final response = await http.post(
         Uri.parse('https://dummyjson.com/auth/login'),
         headers: {'Content-Type': 'application/json'},
@@ -145,7 +142,6 @@ class _LoginMenuState extends State<LoginMenu> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo hoặc icon đăng nhập
               Container(
                 width: 100,
                 height: 100,
@@ -156,7 +152,6 @@ class _LoginMenuState extends State<LoginMenu> {
                 child: Icon(Icons.person, size: 60, color: Colors.purple[700]),
               ),
               const SizedBox(height: 40),
-              // Ô input Tên người dùng
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -204,7 +199,6 @@ class _LoginMenuState extends State<LoginMenu> {
                 ],
               ),
               const SizedBox(height: 20),
-              // Ô input Mật khẩu
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -262,7 +256,6 @@ class _LoginMenuState extends State<LoginMenu> {
                 ],
               ),
               const SizedBox(height: 32),
-              // Nút Đăng nhập
               InkWell(
                 onTap: _isLoading ? null : _handleLogin,
                 borderRadius: BorderRadius.circular(12),
@@ -325,10 +318,8 @@ class _LoginMenuState extends State<LoginMenu> {
                 ),
               ),
               const SizedBox(height: 20),
-              // Quên mật khẩu
               TextButton(
                 onPressed: () {
-                  // Xử lý quên mật khẩu
                 },
                 child: Text(
                   'Quên mật khẩu?',

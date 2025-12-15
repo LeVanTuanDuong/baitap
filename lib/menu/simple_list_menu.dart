@@ -109,33 +109,20 @@ class SimpleListMenu extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: [Color(0xFF9C27B0), Color(0xFFFF9800)],
                   ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        bottom: 20,
-                        left: 20,
-                        child: Container(
-                          width: 40,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(4),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/images/simple1.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey[300],
+                          child: const Center(
+                            child: Icon(Icons.error, color: Colors.grey),
                           ),
-                        ),
-                      ),
-                      Positioned(
-                        top: 20,
-                        right: 20,
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: const BoxDecoration(
-                            color: Colors.yellow,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
+                        );
+                      },
+                    ),
                   ),
                 ),
                 _buildPlaceCard(
@@ -147,74 +134,20 @@ class SimpleListMenu extends StatelessWidget {
                       Colors.lightGreen.shade200,
                     ],
                   ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        bottom: 20,
-                        right: 20,
-                        child: Container(
-                          width: 50,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            color: Colors.brown.shade700,
-                            borderRadius: BorderRadius.circular(4),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/images/simple2.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey[300],
+                          child: const Center(
+                            child: Icon(Icons.error, color: Colors.grey),
                           ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 15,
-                                decoration: BoxDecoration(
-                                  color: Colors.brown.shade900,
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4),
-                                    topRight: Radius.circular(4),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 20,
-                        left: 20,
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 30,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade800,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            Container(
-                              width: 30,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade800,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        top: 20,
-                        right: 20,
-                        child: Container(
-                          width: 30,
-                          height: 30,
-                          decoration: const BoxDecoration(
-                            color: Colors.yellow,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ),
-                    ],
+                        );
+                      },
+                    ),
                   ),
                 ),
                 _buildPlaceCard(
@@ -223,18 +156,19 @@ class SimpleListMenu extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: [Colors.blue.shade800, Colors.green.shade800],
                   ),
-                  child: Center(
-                    child: Container(
-                      width: 60,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: Colors.blue.shade800,
-                          width: 3,
-                        ),
-                      ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/images/simple3.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey[300],
+                          child: const Center(
+                            child: Icon(Icons.error, color: Colors.grey),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -244,59 +178,19 @@ class SimpleListMenu extends StatelessWidget {
                     end: Alignment.bottomCenter,
                     colors: [Colors.brown.shade100, Colors.brown.shade100],
                   ),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 12,
-                              height: 12,
-                              decoration: BoxDecoration(
-                                color: Colors.brown.shade300,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            const SizedBox(width: 12),
-                            Container(
-                              width: 12,
-                              height: 12,
-                              decoration: BoxDecoration(
-                                color: Colors.brown.shade300,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 12),
-                        Container(
-                          width: 50,
-                          height: 20,
-                          decoration: BoxDecoration(
-                            color: Colors.brown.shade300,
-                            borderRadius: BorderRadius.circular(10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Image.asset(
+                      'assets/images/simple5.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey[300],
+                          child: const Center(
+                            child: Icon(Icons.error, color: Colors.grey),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: List.generate(
-                              5,
-                              (index) => Container(
-                                width: 4,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  color: Colors.brown.shade500,
-                                  borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(2),
-                                    bottomRight: Radius.circular(2),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
                   ),
                 ),

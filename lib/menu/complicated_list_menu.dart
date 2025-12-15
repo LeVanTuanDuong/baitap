@@ -91,7 +91,7 @@ class ComplicatedListMenu extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         children: [
                           _buildAccommodationCard(
-                            imageUrl: '',
+                            imageUrl: 'assets/images/complicated1.jpg',
                             badge: 'Bao bữa sáng',
                             name: 'aNhill Boutique',
                             rating: 9.5,
@@ -109,7 +109,7 @@ class ComplicatedListMenu extends StatelessWidget {
                             color: Colors.grey[300],
                           ),
                           _buildAccommodationCard(
-                            imageUrl: '',
+                            imageUrl: 'assets/images/cplic2.jpg',
                             badge: 'Bao bữa sáng',
                             name: 'An Nam Hue Boutique',
                             rating: 9.2,
@@ -126,7 +126,7 @@ class ComplicatedListMenu extends StatelessWidget {
                             color: Colors.grey[300],
                           ),
                           _buildAccommodationCard(
-                            imageUrl: '',
+                            imageUrl: 'assets/images/complic3.jpg',
                             badge: null,
                             name: 'Huế Jade Hill Villa',
                             management: 'Được quản lý bởi một host cá nhân',
@@ -148,7 +148,7 @@ class ComplicatedListMenu extends StatelessWidget {
                             color: Colors.grey[300],
                           ),
                           _buildAccommodationCard(
-                            imageUrl: '',
+                            imageUrl: 'assets/images/complic4.jpg',
                             badge: 'Bao bữa sáng',
                             name: 'Êm Villa',
                             rating: 8.5,
@@ -166,7 +166,7 @@ class ComplicatedListMenu extends StatelessWidget {
                             color: Colors.grey[300],
                           ),
                           _buildAccommodationCard(
-                            imageUrl: '',
+                            imageUrl: 'assets/images/dia-diem-Hallstatt.jpg',
                             badge: 'Bao bữa sáng',
                             name: 'La Residence Hue Hotel',
                             rating: 9.0,
@@ -301,16 +301,34 @@ class ComplicatedListMenu extends StatelessWidget {
         Stack(
           clipBehavior: Clip.none,
           children: [
-            Container(
-              width: 120,
-              height: 140,
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(8),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                width: 120,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: imageUrl.isNotEmpty
+                    ? Image.asset(
+                        imageUrl,
+                        width: 120,
+                        height: 140,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            color: Colors.grey[300],
+                            child: Icon(
+                              Icons.image,
+                              color: Colors.grey[400],
+                              size: 40,
+                            ),
+                          );
+                        },
+                      )
+                    : Icon(Icons.image, color: Colors.grey[400], size: 40),
               ),
-              child: imageUrl.isEmpty
-                  ? Icon(Icons.image, color: Colors.grey[400], size: 40)
-                  : null,
             ),
             // Badge "Bao bữa sáng"
             if (badge != null)
